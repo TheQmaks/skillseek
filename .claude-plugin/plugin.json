@@ -1,0 +1,10 @@
+{
+  "name": "skillseek",
+  "version": "0.1.0",
+  "description": "Search all installed skills (incl. plugin-bundled) and surface the right one to the agent.",
+  "author": { "name": "Anatoliy", "url": "https://github.com/TheQmaks" },
+  "homepage": "https://github.com/TheQmaks/skillseek",
+  "repository": "https://github.com/TheQmaks/skillseek",
+  "license": "MIT",
+  "keywords": ["skills", "search", "discovery", "mcp", "claude-code", "agent-skills"]
+}

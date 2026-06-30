@@ -1,0 +1,55 @@
+{
+  "name": "skillseek",
+  "version": "0.2.0",
+  "description": "Search all your installed Claude Code skills (incl. plugin-bundled) and surface the right one to the agent.",
+  "type": "module",
+  "bin": {
+    "skillseek": "dist/cli.mjs"
+  },
+  "exports": {
+    ".": "./src/lib.mjs"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test",
+    "index": "node bin/cli.mjs index"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "minisearch": "^7.1.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  },
+  "license": "MIT",
+  "author": "Anatoliy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheQmaks/skillseek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheQmaks/skillseek/issues"
+  },
+  "homepage": "https://github.com/TheQmaks/skillseek#readme",
+  "files": [
+    "bin",
+    "src",
+    "hooks",
+    "dist",
+    ".mcp.json",
+    ".claude-plugin",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "claude-code",
+    "skills",
+    "mcp",
+    "search",
+    "agent-skills"
+  ]
+}

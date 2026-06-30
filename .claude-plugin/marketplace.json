@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skillseek",
+  "owner": { "name": "Anatoliy", "url": "https://github.com/TheQmaks" },
+  "metadata": { "description": "Skill discovery for Claude Code", "version": "0.1.0" },
+  "plugins": [
+    { "name": "skillseek", "source": "./", "description": "Skill discovery: index + BM25 search + MCP tool + hooks." }
+  ]
+}

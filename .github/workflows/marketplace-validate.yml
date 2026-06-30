@@ -1,0 +1,42 @@
+name: validate-manifests
+on:
+  push:
+    paths:
+      - '.claude-plugin/**'
+      - '.mcp.json'
+      - 'hooks/hooks.json'
+      - '.github/workflows/marketplace-validate.yml'
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate plugin & marketplace manifests
+        run: |
+          node -e '
+            const fs = require("fs");
+            const read = p => JSON.parse(fs.readFileSync(p, "utf8"));
+            const fail = m => { console.error("FAIL:", m); process.exit(1); };
+
+            const plugin = read(".claude-plugin/plugin.json");
+            if (!plugin.name) fail("plugin.json missing name");
+            if (!plugin.version) fail("plugin.json missing version");
+
+            const mkt = read(".claude-plugin/marketplace.json");
+            if (!mkt.name) fail("marketplace.json missing name");
+            if (!mkt.owner || !mkt.owner.name) fail("marketplace.json missing owner.name");
+            if (!Array.isArray(mkt.plugins) || mkt.plugins.length === 0) fail("marketplace.json plugins[] empty");
+            for (const p of mkt.plugins) {
+              if (!p.name) fail("a marketplace plugin entry has no name");
+              if (!p.source) fail(`plugin ${p.name} has no source`);
+            }
+
+            const mcp = read(".mcp.json");
+            if (!mcp.mcpServers || !Object.keys(mcp.mcpServers).length) fail(".mcp.json has no mcpServers");
+
+            const hooks = read("hooks/hooks.json");
+            if (!hooks.hooks || !Object.keys(hooks.hooks).length) fail("hooks.json has no hooks");
+
+            console.log("All manifests valid.");
+          '

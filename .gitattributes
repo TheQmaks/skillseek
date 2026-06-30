@@ -1,0 +1,2 @@
+# Normalize line endings to LF in the repo (avoids CRLF noise on Windows).
+* text=auto eol=lf

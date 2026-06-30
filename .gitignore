@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.skillseek-state/
+.superpowers/
+# Generated, machine-specific (contains absolute paths + your personal skill inventory) — never commit.
+SKILLS-INDEX.json
+SKILLS-INDEX.md
+# Internal design/process docs — not for the public repo.
+docs/superpowers/
