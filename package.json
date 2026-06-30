@@ -1,6 +1,6 @@
 {
   "name": "skillseek",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Search all your installed Claude Code skills (incl. plugin-bundled) and surface the right one to the agent.",
   "type": "module",
   "bin": {

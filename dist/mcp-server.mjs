@@ -32837,7 +32837,7 @@ ${text}` }] };
 }
 var TOOL_DESCRIPTION = "Search ALL installed Claude Code skills (including plugin-bundled ones) by what they do. Use this when a task might match an installed skill, BEFORE deciding none applies. Returns skill names, descriptions, source, and how to invoke. Example queries: 'deploy to vercel', 'format python', 'product UI motion'.";
 function createServer(searcher) {
-  const server = new McpServer({ name: "skillseek", version: "0.2.0" });
+  const server = new McpServer({ name: "skillseek", version: "0.2.1" });
   server.tool(
     "skill_search",
     TOOL_DESCRIPTION,

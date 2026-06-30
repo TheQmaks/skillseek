@@ -20,7 +20,7 @@ const TOOL_DESCRIPTION =
   "Example queries: 'deploy to vercel', 'format python', 'product UI motion'.";
 
 export function createServer(searcher) {
-  const server = new McpServer({ name: "skillseek", version: "0.2.0" });
+  const server = new McpServer({ name: "skillseek", version: "0.2.1" });
   server.tool(
     "skill_search",
     TOOL_DESCRIPTION,
